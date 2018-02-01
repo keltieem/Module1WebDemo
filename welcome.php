@@ -1,8 +1,8 @@
 <html>
 <body>
 
-Int 1: <?php echo $_POST["int1"]; ?><br>
-Int 2: <?php echo $_POST["int2"]; ?> 
+ID: <?php echo $_POST["hrid"]; ?><br>
+Received HR Data: <?php echo $_POST["heartRate"]; ?> 
 <?php
 
     $servername = "localhost";
@@ -19,10 +19,10 @@ Int 2: <?php echo $_POST["int2"]; ?>
     }
     echo "Connected successfully";
     
-    $int1 = $_POST["int1"];
-    $int2 = $_POST["int2"];
+    $hrid = $_POST["hrid"];
+    $heartRate = $_POST["heartRate"];
     
-    $sql = "INSERT INTO BiomedData (id, data) VALUES ('$int1', '$int2')";
+    $sql = "INSERT INTO BiomedData (id, data) VALUES ('$hrid', '$heartRate')";
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
